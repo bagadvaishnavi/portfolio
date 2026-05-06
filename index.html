@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif;}
+    body {
+      background: linear-gradient(135deg, #1e1e2f, #2b2b45);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    header, section {
+  min-height: 100vh;
+  display: none;
+  flex-direction: column;
+  justify-content: center; /* vertical center like Home */
+  align-items: center;     /* horizontal center */
+  text-align: center;
+  padding: 120px 20px 20px;
+  overflow: hidden;        /* no inner scroll */
+}
+
+header.active, section.active { 
+  display: flex; 
+}
+header img {
+  box-shadow: 0 0 30px rgba(255, 126, 179, 0.6);
+}
+section .card {
+  width: 300px;
+  margin: 10px 0;
+  padding: 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+section h1 {
+  margin-bottom: 20px;
+}
+
+
+    header.active, section.active {display: flex;}
+
+    header img {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;  /* 🔥 shifts image upward */
+  border: 5px solid #ff7eb3;
+  display: block;
+  margin: auto;
+}
+header img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #ff7eb3;
+  transition: 0.3s;
+}
+
+    h1 {font-size: 2.5rem; margin-bottom: 10px;}
+    p {opacity: 0.8; margin-bottom: 20px;}
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
+      z-index: 100;
+    }
+
+    nav button {
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    nav button:hover { color: #ff7eb3; }
+
+    .card {
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      margin: 10px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+    }
+
+    .gallery img {
+      width: 200px;
+      margin: 10px;
+      border-radius: 15px;
+      transition: 0.3s;
+    }
+
+    .gallery img:hover { transform: scale(1.1); }
+    #about {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#about .card {
+  width: 300px;
+}
+.card h2:hover {
+  text-shadow: 0 0 10px rgba(255,255,255,0.6);
+  transform: scale(1.05);
+}
+#achievements div:hover {
+  transform: scale(1.05);
+}
+  </style>
+</head>
+<body>
+
+<nav>
+  <button onclick="showSection('home')">Home</button>
+  <button onclick="showSection('about')">About</button>
+  <button onclick="showSection('skills')">Skills</button>
+  <button onclick="showSection('achievements')">Achievements</button>
+  <button onclick="showSection('hobbies')">Hobbies</button>
+  <button onclick="showSection('contact')">Contact</button>
+</nav>
+
+<header id="home" class="active">
+  <img src="photo/photo.jpeg" alt="My Profile Photo">
+  <h1>Vaishnavi Bagad</h1>
+  <p>Welcome to my portfolio</p>
+
+  <div class="card" style="max-width:500px; margin-top:20px; text-align:left;">
+    <h2 style="text-align:center; color:#ff7eb3; margin-bottom:10px;">Education</h2>
+    <p><strong>10th Grade:</strong> 82%</p>
+    <p><strong>12th Grade:</strong> 84.17%</p>
+    
+    <p><strong>NASSCOM Course:</strong> 100% Completion</p>
+    <p><strong>Currently Studying:</strong> First Year BTech ,CSE(Artificial intelligence and machine learning)</p>
+    
+    <p><strong>Institute:</strong> MIT Academy of Engineering, Alandi</p>
+    <p style="font-weight:bold; color:#ffd166;"><strong>Expected Graduation:</strong> 2029</p>
+  </div>
+</header>
+
+<section id="about">
+  <div style="
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      min-height: 100vh;
+      padding: 20px;
+      gap: 20px;
+  ">
+    <h1>About Me</h1>
+    <div class="card" style="width:350px;">
+      I am a curious and creative individual who enjoys learning new things.<br>
+      I love exploring ideas and expressing myself through creativity.<br>
+      Photography and reading help me see the world differently.<br>
+      I believe in continuous growth and self-improvement.<br>
+      I enjoy balancing creativity with logical thinking.<br>
+      Always open to new experiences and opportunities.
+    </div>
+
+    <div class="card" style="width:300px;">
+      <h2 style="color:#6ec1ff;">🌐 Languages</h2>
+      <p>Hindi, Marathi, English</p>
+    </div>
+
+    <div class="card" style="width:300px;">
+      <h2 style="color:#a29bfe;">💻 Coding Skills</h2>
+      <p>C, HTML, CSS, C++, Python</p>
+    </div>
+
+    <div class="card" style="width:300px;">
+      <h2 style="color:#ff9f43;">🎨 Hobbies & Interests</h2>
+      <p>Painting, Photography, Playing, Reading, Editing, Sketching</p>
+    </div>
+
+    <div class="card" style="width:300px;">
+      <h2 style="color:#55efc4;">📞 Contact Me</h2>
+      <p>Email: vaishnavibagad2007@gmail.com</p>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <!-- Section Title -->
+  <h1 style="font-size:2rem; margin-bottom:30px; text-align:center;">Skills & Projects</h1>
+  
+  <!-- Top row: 4 detailed skills with colored boxes -->
+  <div style="
+      display:flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom:40px;
+  ">
+    <!-- Python -->
+    <div style="
+        flex:1; min-width:220px; max-width:250px;
+        padding:15px; border-radius:15px; 
+        background:rgba(110,193,255,0.2);
+        border:2px solid #6ec1ff;
+      ">
+      <h2 style="font-size:1.2rem; margin-bottom:10px; color:#6ec1ff;">🐍 Python</h2>
+      <p style="font-size:0.9rem; line-height:1.5;">
+        Proficient in Python for problem solving, automation, and AI/ML basics. 
+        Able to write clean and efficient scripts and implement basic ML algorithms.
+      </p>
+    </div>
+
+    <!-- Data Visualization -->
+    <div style="
+        flex:1; min-width:220px; max-width:250px;
+        padding:15px; border-radius:15px; 
+        background:rgba(162,155,254,0.2);
+        border:2px solid #a29bfe;
+      ">
+      <h2 style="font-size:1.2rem; margin-bottom:10px; color:#a29bfe;">📊 Data Visualization</h2>
+      <p style="font-size:0.9rem; line-height:1.5;">
+        Experienced in creating interactive dashboards and charts using Matplotlib, Seaborn, and Plotly. 
+        Can communicate data insights effectively.
+      </p>
+    </div>
+
+    <!-- C Programming -->
+    <div style="
+        flex:1; min-width:220px; max-width:250px;
+        padding:15px; border-radius:15px; 
+        background:rgba(255,159,67,0.2);
+        border:2px solid #ff9f43;
+      ">
+      <h2 style="font-size:1.2rem; margin-bottom:10px; color:#ff9f43;">💻 C Programming</h2>
+      <p style="font-size:0.9rem; line-height:1.5;">
+        Strong foundation in C for logic building, algorithm design, and computational problem solving.
+      </p>
+    </div>
+
+    <!-- Web Development: HTML & CSS -->
+    <div style="
+        flex:1; min-width:220px; max-width:250px;
+        padding:15px; border-radius:15px; 
+        background:rgba(85,239,196,0.2);
+        border:2px solid #55efc4;
+      ">
+      <h2 style="font-size:1.2rem; margin-bottom:10px; color:#55efc4;">🌐 Web Development</h2>
+      <p style="font-size:0.9rem; line-height:1.5;">
+        Skilled in HTML & CSS for responsive web pages and aesthetically appealing layouts. 
+        Basic interactivity with JavaScript.
+      </p>
+    </div>
+  </div>
+
+</section>
+<section id="achievements">
+  
+  <!-- Heading -->
+  <h1 style="font-size:2.2rem; margin-bottom:10px; color:#ffd166;">
+    🏆 My Certificates
+  </h1>
+
+  <!-- Subtitle -->
+  <p style="max-width:700px; font-size:1rem; opacity:0.85; margin-bottom:30px;">
+    These certificates are a testament to my dedication, consistency, and passion for learning. 
+    Each achievement reflects my continuous effort to grow, explore new technologies, and improve my skills.
+  </p>
+
+  <!-- Certificates Grid -->
+  <div style="
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap:20px;
+      width:90%;
+      max-width:1000px;
+  ">
+
+    <!-- Certificate Box 1 -->
+    <div style="background:rgba(255,255,255,0.08); padding:15px; border-radius:15px; backdrop-filter:blur(10px); transition:0.3s;">
+      <img src="certificates/cert1.png" style="width:100%; border-radius:10px;">
+      <p style="margin-top:10px; font-size:0.9rem;"></p>
+    </div>
+
+    <!-- Certificate Box 2 -->
+    <div style="background:rgba(255,255,255,0.08); padding:15px; border-radius:15px;">
+      <img src="certificates/cert2.png" style="width:100%; border-radius:10px;">
+      <p style="margin-top:10px; font-size:0.9rem;"></p>
+    </div>
+
+
+    <!-- Certificate Box 3 -->
+    <div style="background:rgba(255,255,255,0.08); padding:15px; border-radius:15px;">
+      <img src="certificates/cert3.png" style="width:100%; border-radius:10px;">
+      <p style="margin-top:10px; font-size:0.9rem;"></p>
+    </div>
+
+    <!-- Certificate Box 4 -->
+    <div style="background:rgba(255,255,255,0.08); padding:15px; border-radius:15px;">
+      <img src="certificates/cert4.png" style="width:100%; border-radius:10px;">
+      <p style="margin-top:10px; font-size:0.9rem;"></p>
+    </div>
+
+    <!-- Certificate Box 5 -->
+    <div style="background:rgba(255,255,255,0.08); padding:15px; border-radius:15px;">
+      <img src="certificates/cert5.png" style="width:100%; border-radius:10px;">
+      <p style="margin-top:10px; font-size:0.9rem;"></p>
+    </div>
+     <!-- Certificate Box 6 -->
+    <div style="background:rgba(255,255,255,0.08); padding:15px; border-radius:15px;">
+      <img src="certificates/cert6.png" style="width:100%; border-radius:10px;">
+      <p style="margin-top:10px; font-size:0.9rem;"></p>
+    </div>
+     <!-- Certificate Box 7 -->
+    <div style="background:rgba(255,255,255,0.08); padding:15px; border-radius:15px;">
+      <img src="certificates/cert7.png" style="width:100%; border-radius:10px;">
+      <p style="margin-top:10px; font-size:0.9rem;"></p>
+    </div>
+     <!-- Certificate Box 8 -->
+    <div style="background:rgba(255,255,255,0.08); padding:15px; border-radius:15px;">
+      <img src="certificates/cert8.png" style="width:100%; border-radius:10px;">
+      <p style="margin-top:10px; font-size:0.9rem;"></p>
+    </div>
+     <!-- Certificate Box 9 -->
+    <div style="background:rgba(255,255,255,0.08); padding:15px; border-radius:15px;">
+      <img src="certificates/cert9.png" style="width:100%; border-radius:10px;">
+      <p style="margin-top:10px; font-size:0.9rem;"></p>
+    </div>
+     <!-- Certificate Box 10 -->
+    <div style="background:rgba(255,255,255,0.08); padding:15px; border-radius:15px;">
+      <img src="certificates/cert10.png" style="width:100%; border-radius:10px;">
+      <p style="margin-top:10px; font-size:0.9rem;"></p>
+    </div>
+  </div>
+
+</section>
+
+<section id="hobbies">
+
+  <!-- Heading -->
+  <h1 style="font-size:2.2rem; color:#ff7eb3; margin-bottom:10px;">
+    🎨 My Hobbies & Experiences
+  </h1>
+
+  <p style="max-width:700px; opacity:0.85; margin-bottom:30px;">
+    A glimpse into the things I love — from reading and photography to sports and traveling. 
+    These activities shape my creativity, perspective, and personality.
+  </p>
+
+  <!-- 📚 Reading Section -->
+  <div style="width:90%; max-width:1000px; margin-bottom:40px;">
+    <h2 style="color:#ffd166; margin-bottom:15px;">📚 Reading (Favorite Books)</h2>
+
+    <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
+      
+      <div style="background:rgba(255,209,102,0.15); padding:15px; border-radius:15px; width:200px;">
+        <img src="https://th.bing.com/th/id/OIP.wkuznfd9nuRUdT2h3BYT0wHaHa?w=208&h=208&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" style="width:100%; border-radius:10px;">
+        <p style="margin-top:10px;">Samsara</p>
+      </div>
+
+      <div style="background:rgba(255,209,102,0.15); padding:15px; border-radius:15px; width:200px;">
+        <img src="https://th.bing.com/th/id/OIP.QGEdpyGGPxpS0Eb4taXApwHaHU?w=208&h=206&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" style="width:100%; border-radius:10px;">
+        <p style="margin-top:10px;">The Mountain Is You</p>
+      </div>
+
+      <div style="background:rgba(255,209,102,0.15); padding:15px; border-radius:15px; width:200px;">
+        <img src="https://th.bing.com/th/id/OIP.v8KaMNzi8qaS5P56r0g2KAHaLW?w=201&h=309&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" style="width:100%; border-radius:10px;">
+        <p style="margin-top:10px;">The Naga Warrior</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 📸 Photography Section -->
+  <div style="width:90%; max-width:1000px; margin-bottom:40px;">
+    <h2 style="color:#6ec1ff; margin-bottom:15px;">📸 Photography</h2>
+
+    <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center;">
+      
+      <div style="width:250px;">
+        <img src="photo/photo1.png" style="width:100%; border-radius:15px;">
+      </div>
+
+      <div style="width:250px;">
+        <img src="photo/photo2.png" style="width:100%; border-radius:15px;">
+      </div>
+
+      <div style="width:250px;">
+        <img src="photo/photo3.png" style="width:100%; border-radius:15px;">
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 🏸 Sports Section -->
+<div style="width:90%; max-width:1000px; margin-bottom:40px;">
+  <h2 style="color:#55efc4; margin-bottom:15px;">🏸 Sports</h2>
+
+  <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+    
+    <!-- Badminton -->
+    <div style="background:rgba(85,239,196,0.15); padding:20px; border-radius:15px; width:200px; text-align:center;">
+      <img src="https://th.bing.com/th/id/OIP.XCfW3M4fIUzs2NIJNwFBkQHaE8?w=290&h=193&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+           alt="Badminton"
+           style="width:100%; height:120px; object-fit:cover; border-radius:10px; margin-bottom:10px;">
+      <h3>Badminton</h3>
+    </div>
+
+  </div>
+</div>
+
+  <!-- 🌍 Travel Section (Highlighted) -->
+  <div style="width:90%; max-width:1000px; padding:25px; border-radius:20px; background:rgba(255,126,179,0.15); box-shadow:0 0 20px rgba(255,126,179,0.3);">
+    
+    <h2 style="color:#ff7eb3; margin-bottom:10px;">🌍 Places I’ve Traveled So Far</h2>
+
+    <p style="opacity:0.85; margin-bottom:20px;">
+      Traveling allows me to explore cultures, experience new environments, and create unforgettable memories.
+    </p>
+
+    <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
+      
+      <div style="width:250px;">
+        <img src="https://th.bing.com/th/id/OIP.3lNy-qypH8iKeidDIBX2MwHaEK?w=272&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" style="width:100%; border-radius:15px;">
+        <p style="margin-top:10px;">Taj mahal,Agra</p>
+      </div>
+
+      <div style="width:250px;">
+        <img src="https://th.bing.com/th/id/OIP.iyDtn-RFzpnt0UHjw53zAAHaHa?w=167&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" style="width:100%; border-radius:15px;">
+        <p style="margin-top:10px;">Jammu And Kashmir</p>
+      </div>
+
+      <div style="width:250px;">
+        <img src="https://th.bing.com/th/id/OIP.q94QMYwhc5vDOvinwYStnAHaFj?w=89&h=89&c=1&rs=1&qlt=70&r=0&o=7&dpr=1.3&pid=InlineBlock&rm=3" style="width:100%; border-radius:15px;">
+        <p style="margin-top:10px;">Mumbai</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="contact">
+
+  <!-- Heading with color -->
+  <h1 style="font-size:1.8rem; margin-bottom:10px; color:#ff7eb3;">
+    Get In Touch
+  </h1>
+
+  <p style="opacity:0.75; margin-bottom:30px; font-size:0.95rem;">
+    Feel free to connect with me for opportunities, collaborations, or just a conversation.
+  </p>
+
+  <!-- Contact Layout -->
+  <div style="display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:30px; margin-bottom:40px;">
+
+    <!-- Email Rectangle -->
+    <div style="padding:15px 25px; border-radius:15px; background:rgba(255,126,179,0.15); text-align:center; min-width:220px;">
+      <div style="font-size:1.5rem;">📧</div>
+      <p style="font-size:0.8rem; margin-top:8px;">Email</p>
+      <p style="font-size:0.75rem;">vaishnavibagad2007@gmail.com</p>
+    </div>
+
+    <!-- Phone Rectangle -->
+    <div style="padding:15px 25px; border-radius:15px; background:rgba(110,193,255,0.15); text-align:center; min-width:220px;">
+      <div style="font-size:1.5rem;">📱</div>
+      <p style="font-size:0.8rem; margin-top:8px;">Phone</p>
+      <p style="font-size:0.75rem;">+91 9405151621</p>
+    </div>
+
+    <!-- Location Rectangle -->
+    <div style="padding:15px 25px; border-radius:15px; background:rgba(255,241,118,0.15); text-align:center; min-width:220px;">
+      <div style="font-size:1.5rem;">📍</div>
+      <p style="font-size:0.8rem; margin-top:8px;">Location</p>
+      <p style="font-size:0.75rem;">India</p>
+    </div>
+
+  </div>
+
+  <!-- Social Links -->
+  <div style="text-align:center;">
+    <h2 style="font-size:1.2rem; margin-bottom:15px;">Connect Online</h2>
+
+    <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
+
+      <a href="https://www.instagram.com/vaish._nav._iii/" style="text-decoration:none; color:white; background:rgba(255,255,255,0.08); padding:10px 15px; border-radius:20px; font-size:0.9rem;">
+        📸 Instagram
+      </a>
+
+      <a href="https://github.com/bagadvaishnavi" style="text-decoration:none; color:white; background:rgba(255,255,255,0.08); padding:10px 15px; border-radius:20px; font-size:0.9rem;">
+        🐦 GitHub
+      </a>
+
+      <a href="https://www.linkedin.com/in/vaishnavi-bagad-b00417386/" style="text-decoration:none; color:white; background:rgba(255,255,255,0.08); padding:10px 15px; border-radius:20px; font-size:0.9rem;">
+        💼 LinkedIn
+      </a>
+
+    </div>
+  </div>
+
+</section>
+<script>
+  function showSection(id) {
+    // Hide all sections and header
+    document.querySelectorAll('section, header').forEach(sec => {
+      sec.classList.remove('active');
+    });
+    // Show selected section
+    document.getElementById(id).classList.add('active');
+  }
+</script>
+
+</body>
+</html>
